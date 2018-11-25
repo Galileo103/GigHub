@@ -1,4 +1,5 @@
 ﻿@model GigHub.ViewModels.GigFormViewModel
+
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -31,10 +32,15 @@
         @Html.DropDownListFor(m => m.Genre, new SelectList(Model.Genres, "Id", "Name"), "Select Genre", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Genre)
     </div>
+    
+    @Html.AntiForgeryToken();
 
     <button type="submit" class="btn btn-primary">Save</button>
     @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-default" });
 }
+
+
+@* For Enable client-side validation *@
 
 @section scripts
 {
