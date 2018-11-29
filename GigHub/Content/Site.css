@@ -23,7 +23,9 @@ textarea {
     max-width: 280px;
 }
 
-
+span.field-validation-error {
+    color: red;
+}
 /* Overriding Bootstrap Styles */
 
 .navbar-inverse {
